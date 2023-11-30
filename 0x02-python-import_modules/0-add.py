@@ -9,7 +9,6 @@ if __name__ == "__main__":
     b = 2
 
     # Perform addition and store the result
-    result = add(a, b)
 
     # Print the formatted string
-    print("{:d} + {:d} = {:d}".format(a, b, result))
+    print("{} + {} = {}".format(a, b, add(a, b)))
