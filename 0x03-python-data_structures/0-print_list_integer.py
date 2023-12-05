@@ -2,5 +2,5 @@
 
 def print_list_integer(my_list=[]):
     for x in my_list:
-        i = "{}".format(x)
-        print(int(i))
+        i = "{:d}".format(x)
+        print(i)
