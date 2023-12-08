@@ -1,23 +1,26 @@
 #include "lists.h"
 
 /**
-*add_nodeint - adds a new node at the beginning of the list
-*@head: head of listint_t
-*@n: int to add to the list
-*Return: address of the new element
-*/
-
-listint_t *add_nodeint(listint_t **head, const int n)
+ * reverse_listint - reverses a linked list
+ * @head: pointer to the first node in the list
+ *
+ * Return: pointer to the first node in the new list
+ */
+void reverse_listint(listint_t **head)
 {
-	listint_t *new;
+	listint_t *prev = NULL;
+	listint_t *current = *head;
+	listint_t *next = NULL;
 
-	new = malloc(sizeof(listint_t));
-	if (new == NULL)
-		return (NULL);
-	new->n = n;
-	new->next = *head;
-	*head = new;
-	return (new);
+	while (current)
+	{
+		next = current->next;
+      		current->next = prev;
+      		prev = current;
+      		current = next;
+    	}
+
+ 	*head = prev;
 }
 
 /**
@@ -28,29 +31,42 @@ listint_t *add_nodeint(listint_t **head, const int n)
 
 int is_palindrome(listint_t **head)
 {
-	listint_t *head_ptr = NULL;
+	 listint_t *slow = *head, *fast = *head, *temp = *head, *dup = NULL;
 
-	head_ptr = *head;
-	listint_t *ptr1 = NULL, *ptr2 = NULL;
+  	if (*head == NULL || (*head)->next == NULL)
+    		return (1);
 
-	if (*head == NULL || head_ptr->next == NULL)
-		return (1);
-	while (head_ptr != NULL)
-	{
-		add_nodeint(&ptr1, head_ptr->n);
-		head_ptr = head_ptr->next;
-	}
-	ptr2 = ptr1;
-	while (*head != NULL)
-	{
-		if ((*head)->n != ptr2->n)
+  	while (1)
+    	{
+      		fast = fast->next->next;
+      		if (!fast)
 		{
-			free_listint(ptr1);
-			return (0);
+	  		dup = slow->next;
+	  		break;
 		}
-		*head = (*head)->next;
-		ptr2 = ptr2->next;
-	}
-	free_listint(ptr2);
-	return (1);
+      		if (!fast->next)
+		{
+	  		dup = slow->next->next;
+	  		break;
+		}
+		slow = slow->next;
+    	}
+
+	 reverse_listint(&dup);
+
+	 while (dup && temp)
+    	{
+     		if (temp->n == dup->n)
+		{
+			 dup = dup->next;
+			temp = temp->next;
+		}
+      		else
+			return (0);
+    	}
+
+  	if (!dup)
+    		return (1);
+
+  	return (0);
 }
