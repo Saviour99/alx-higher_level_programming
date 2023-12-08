@@ -13,7 +13,7 @@
  * @next: points to the next node
  *
  * Description: doubly linked list node structure
- *
+ * 
  */
 typedef struct dlistint_s
 {
@@ -21,7 +21,6 @@ typedef struct dlistint_s
     struct dlistint_s *prev;
     struct dlistint_s *next;
 } dlistint_t;
-
 
 /* PROTOTYPES */
 size_t print_dlistint(const dlistint_t *h);
