@@ -2,8 +2,5 @@
 
 def uniq_add(my_list=[]):
     uniq = set(my_list)
-    result = 0
-
-    for elm in uniq:
-        result += elm
+    result = sum(uniq)
     return result
