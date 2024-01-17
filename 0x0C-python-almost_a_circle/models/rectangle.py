@@ -9,7 +9,7 @@ class Rectangle(Base):
 	"""Rectangle class that inherit from the base class"""
 
 	def __init__(self, width, height, x=0, y=0, id=None):
-		"""The function with width, height, x, y and id
+		"""The function that initialize a new rectangle
 			
 		   Args:
 			width: the width of the function
@@ -20,14 +20,12 @@ class Rectangle(Base):
 		"""
 
 		super().__init__(id) # the superclass constructor
-		
 		self.width = width
 		self.height = height
 		self.x = x
 		self.y = y
 
 	# Getter and sette for width
-		
 	@property
 	def width(self):
 		"""Return the value of the width"""
