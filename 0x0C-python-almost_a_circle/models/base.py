@@ -9,13 +9,15 @@ class Base:
 	Attributes:
 		id (int): The unique id
 	"""
-	__nb_objects = 0
+
+	__nb_objects = 0  #: Private class attribute
 	def __init__(self, id=None):
 		"""Initiaizes a base object.
 
 		Args:
 			id (int, optional): An optional id
 		"""
+
 		if id is not None:
 			self.id = id
 		else:
