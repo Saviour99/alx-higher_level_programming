@@ -1,10 +1,21 @@
 #!/usr/bin/python3
-"""This is a models module"""
+"""This is a models module
+This module contains a base class
+"""
 
 class Base:
-	"""The models class: base"""
+	"""The models class: base
+	
+	Attributes:
+		id (int): The unique id
+	"""
 	__nb_objects = 0
-	def __init__(self, id = None):
+	def __init__(self, id=None):
+		"""Initiaizes a base object.
+
+		Args:
+			id (int, optional): An optional id
+		"""
 		if id is not None:
 			self.id = id
 		else:
