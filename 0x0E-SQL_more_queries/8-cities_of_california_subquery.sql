@@ -1,4 +1,5 @@
 -- A script that lists all the cities of California that can be found in the database hbtn_0d_usa.
+-- lists all rows of a column in a database
 
 USE `hbtn_0d_usa`;
 SELECT id, name
