@@ -1,12 +1,12 @@
 #!/usr/bin/node
 
-const args = process.argv.slice(2);
+const args = process.argv;
 const noArgs = 'No argument';
 const oneOrMoreArgs = 'Argument found';
 
-if (args.length === 0) {
+if (args.length === 2) {
   console.log(noArgs);
-} else if (args.length === 1) {
+} else if (args.length === 3) {
   console.log(oneOrMoreArgs);
 } else {
   console.log(oneOrMoreArgs);
