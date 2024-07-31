@@ -11,7 +11,7 @@ const getMoviesWithCharacter = (apiUrl, characterId) => {
       console.error('Error fetching data:', error);
       return;
     }
-    
+
     try {
       // Parse the JSON response
       const movies = JSON.parse(body).results;
@@ -39,4 +39,3 @@ if (process.argv.length !== 3) {
 const apiUrl = process.argv[2];
 const characterId = '18'; // Character ID should be a string
 getMoviesWithCharacter(apiUrl, characterId);
-
