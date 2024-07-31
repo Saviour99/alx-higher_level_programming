@@ -11,7 +11,7 @@ if (!movieId) {
 }
 
 // Star Wars API base URL
-const apiBaseUrl = 'https://swapi.dev/api/films/';
+const apiBaseUrl = 'https://swapi-api.alx-tools.com/api/films/';
 
 // Construct the URL for the specific movie
 const movieUrl = `${apiBaseUrl}${movieId}/`;
